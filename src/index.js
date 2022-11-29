@@ -1,6 +1,6 @@
 const express = require("express")
 const mongoose = require("mongoose")
-// const session = require("express-session")
+const cors = require("cors")
 const route = require("./routes/route")
 const PORT = process.env.PORT || 5000
 const app = express()
@@ -10,12 +10,7 @@ app.get("/", (request, response) => {
     response.status(200).send("API IS RUNNING")
 })
 
-// app.use(session({
-//     secret: "dharam-digital",
-//     resave: false,
-//     saveUninitialized: false
-// }))
-
+app.use(cors())
 mongoose.connect("mongodb+srv://functionup-radon-cohort:radon123@cluster0.zbsotuc.mongodb.net/wasserstoff", {
     useNewUrlParser: true
 })
