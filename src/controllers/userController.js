@@ -1,7 +1,7 @@
 const userModel = require("../models/userModel")
 const topicModel = require("../models/topicModel")
 
-const jwt = require("jsonwebtoken")
+// const jwt = require("jsonwebtoken")
 
 module.exports.createUser = async (req, res) => {
     try {
@@ -33,10 +33,9 @@ module.exports.userLogin = async (req, res) => {
         if (!userName) return res.status(400).send("Enter User Name")
         let dbCall = await userModel.findOne({ userName: userName })
         if (!dbCall) return res.status(400).send("Invalid userName, if not having account please sign-in first")
-        let token = jwt.sign({
-            userName: dbCall.userName
-        }, "wasserstoff")
-        res.status(200).send({ name: dbCall.name, token: token })
+
+        res.status(200).send({ userName: dbCall.userName })
+        // res.redirect(302, `/getTopics/${dbCall.userName}`)
     }
     catch (err) {
         res.status(500).send(err)

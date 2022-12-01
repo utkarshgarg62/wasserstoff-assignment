@@ -11,6 +11,7 @@ router.post("/userLogin", userController.userLogin)
 // ******* TOPICS ROUTES ****************//
 router.post("/addTopic/:userName", topicController.addTopic)
 router.get("/getTopics/:userName", topicController.getTopic)
+router.get("/getTopics", topicController.userData)
 
 
 module.exports = router;

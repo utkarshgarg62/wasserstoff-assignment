@@ -38,3 +38,14 @@ module.exports.getTopic = async (req, res) => {
         res.status(500).send(err)
     }
 }
+
+module.exports.userData = async (req, res) => {
+    try {
+        let response = await topicModel.find()
+        res.status(200).send(response)
+    }
+    catch (err) {
+        res.status(500).send(err)
+    }
+}
+
