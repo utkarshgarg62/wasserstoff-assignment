@@ -25,7 +25,7 @@ const LoginPage = () => {
                 userName: userName,
             })
 
-            setResult("Success")
+            setResult("Success.. redirecting to DashBoard")
             let id = response.data.userName
             cookie.set("userName", id)
             console.log("Sucess")
