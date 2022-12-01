@@ -20,7 +20,7 @@ root.render(
           <Route index element={<LoginPage />}></Route>
 
           <Route path="register" element={<RegisterPage />}></Route>
-          <Route path="topics" element={<Topics />}></Route>
+          <Route path="getTopics" element={<Topics />}></Route>
           <Route path="topic" element={<Topic />}></Route>
 
         </Route>

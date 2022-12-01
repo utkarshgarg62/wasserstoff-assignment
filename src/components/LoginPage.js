@@ -1,12 +1,15 @@
 import React, { useState } from "react"
-import { NavLink, useNavigate } from "react-router-dom";
+import {
+    NavLink,
+    useNavigate
+} from "react-router-dom";
 import axios from "axios"
 import "./style.css"
 import url from "../config"
-// import cookie from "js-cookie"
+import cookie from "js-cookie"
 
 const api = `${url.BaseUrl}/userLogin`;
-console.log(api)
+// console.log(api)
 
 const LoginPage = () => {
     let navigate = useNavigate();
@@ -21,14 +24,15 @@ const LoginPage = () => {
             let response = await axios.post(api, {
                 userName: userName,
             })
-            setTimeout(function () {
-                navigate("/topics", { replace: true });
-            }, 3000);
+
             setResult("Success")
-            // let studentId = response.data.data.studentId
-            // cookie.set("id", studentId)
+            let id = response.data.userName
+            cookie.set("userName", id)
             console.log("Sucess")
             console.log(response)
+            setTimeout(function () {
+                navigate(`/getTopics`, { replace: true });
+            }, 3000);
         }
         catch (err) {
             console.log("Unsucess")

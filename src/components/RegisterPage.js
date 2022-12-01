@@ -5,7 +5,7 @@ import url from "../config"
 import "./style.css"
 
 const api = `${url.BaseUrl}/createUser`;
-console.log(api)
+// console.log(api)
 
 const RegisterPage = () => {
     let navigate = useNavigate();
