@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { NavLink } from "react-router-dom";
+import "./style2.css"
 import axios from "axios"
 import url from "../config"
 import cookie from "js-cookie"
@@ -37,8 +38,8 @@ const Topic = () => {
 
     return <div>
 
-        <div className="login-page">
-            <div className="form">
+        <div className="login-page2">
+            <div className="form2">
                 <h2>Add Topic <NavLink to="/getTopics">Back</NavLink></h2>
                 {result !== "" && <div className="alert alert-success" role="alert">{result}</div>}
                 {isError !== "" && <div className="alert alert-danger" role="alert">{isError}</div>}
@@ -51,11 +52,12 @@ const Topic = () => {
                     <input type="text" placeholder="Enter title" name="title"
                         value={title} onChange={(e) => setTitle(e.target.value)}
                     />
-                    <input type="text" placeholder="Enter details" name="details"
+                    <input type="text" placeholder="Text Area" name="details"
                         value={details} onChange={(e) => setDetails(e.target.value)}
                     />
                     <button>Add</button>
-                
+                    <p>Note: Refresh your page before adding any Topic.</p>
+
                 </form>
             </div>
         </div>

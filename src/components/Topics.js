@@ -43,6 +43,13 @@ const Topics = () => {
                     <form className="login-form">
                         <label>User_Name</label><input type="text" placeholder="Enter userName" name="userName" value={userData.userName} />
                         <label>User_id</label><input type="text" placeholder="Enter userName" name="userName" value={userData._id} />
+
+                        {/* {userData.topics.map((x) =>
+                            <div key={x._id}>
+                                <h3>{x.title}</h3>
+                                <p>{x.details}</p>
+                            </div>
+                        )} */}
                     </form>
                 </div>
             </div>
