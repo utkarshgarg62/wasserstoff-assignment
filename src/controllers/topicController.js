@@ -3,10 +3,10 @@ const userModel = require("../models/userModel")
 module.exports.addTopic = async (req, res) => {
     try {
         let userNameP = req.params.userName
-        console.log(userNameP)
+        // console.log(userNameP)
         if (!userNameP) return res.status(400).send("Enter userName")
         let userName = req.body.userName
-        console.log(userName)
+        // console.log(userName)
         if (userName != userNameP) return res.status(400).send("Unauthorize")
         let title = req.body.title
         let details = req.body.details
@@ -17,7 +17,7 @@ module.exports.addTopic = async (req, res) => {
             details: details
         }
         let dbCall = await userModel.findOne({ userName: userNameP })
-        console.log(dbCall)
+        // console.log(dbCall)
         if (!dbCall) return res.status(404).send("User not Found")
         let topicList = dbCall.topics
         topicList.push(dataToBeCreated)
